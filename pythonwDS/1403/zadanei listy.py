@@ -6,7 +6,7 @@
 # Funkcja niczego nie zwraca
 
 
-# animals = ["Kot", "Pies", "Słoń", "Żółw", "Chomik", "Papuga"]
+animals = ["Kot", "Pies", "Słoń", "Żółw", "Chomik", "Papuga"]
 # choosen = input("Wpisz add, jezeli dodac zwierze do listy, lub delete, jezeli chcesz usunac zwierze z listy.")
 #
 # def manage_lists(add, delete):
