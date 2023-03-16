@@ -6,12 +6,11 @@
 #     Wartość - ilość wystąpień litery w tekście
 # Przykładowo: dla klucza "l" wartości to 2
 
-fraza = "alamakotaakotmapierdolca"
-slownik ={}
+slownik = {}
 
-def lancuch_znakowy():
+def lancuch_znakowy(fraza):
     for c in fraza:
         if c not in slownik:
             slownik[c] = fraza.count(c)
     return slownik
-print(lancuch_znakowy())
+print(lancuch_znakowy("alamakotaakotmapierdolca"))
