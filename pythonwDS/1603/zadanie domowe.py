@@ -32,7 +32,7 @@
 # b = int(input("Podaj 2 liczbę:"))
 # c = int(input("Podaj 3 liczbę:"))
 #
-# if a == b == c:
+# if a == b == c or a == b or a == c or b == c:
 #     print("Podane liczby są równe.")
 # else:
 #     if a >= b and a >= c:
@@ -97,18 +97,18 @@
 #
 
 
-def sum_digits(n):
-
-    sum = 0
-    while n > 0:
-        digit = n % 10
-        sum += digit
-        n //= 10
-    return sum
-
-number = int(input("Podaj liczbę całkowitą: "))
-result = sum_digits(number)
-print(f"Suma cyfr liczby {number},to {result}")
+# def sum_digits(n):
+#
+#     sum = 0
+#     while n > 0:
+#         digit = n % 10
+#         sum += digit
+#         n //= 10
+#     return sum
+#
+# number = int(input("Podaj liczbę całkowitą: "))
+# result = sum_digits(number)
+# print(f"Suma cyfr liczby {number},to {result}")
 
 
 
@@ -126,3 +126,12 @@ print(f"Suma cyfr liczby {number},to {result}")
 # Napisać program, gdzie użytkownik podaje n łańcuchów znakowych (ilość n również definiuje wcześniej użytkownik). Następnie program zwraca informacje ile łańcuchów znakowych jest unikatowych. :)
 #
 # Przykładowo: użytkownik podał n = 3. Następnie podał trzy łańcuchy znakowe: Kot, Pies, Kot. Program zwróci informacje, że ilość UNIKATOWYCH łańuchów znakowych to: 2.
+
+n = int(input("Ile danych chcesz podać?: "))
+my_collection = set()
+
+for i in range(n):
+    txt = input(f"Podaj txt {i+1}: ")
+    my_collection.add(txt)
+
+print(f"Ilość unikatowych wartości: {len(my_collection)}")
