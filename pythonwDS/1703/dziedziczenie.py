@@ -45,9 +45,23 @@ class Customer(Person):
     def __str__(self):
         return f"{self.login} {super.__str__()}"
 
-    def add_order(self,product, cost):
+    def add_order(self, product, cost):
         if self.check_is_adult():
-            self.orders.append(product,cost)
+            order = (product, cost)
+            self.orders.append(order)
+            self.total_order_cost += cost
+    def show_orders(self):
+        for i in self.orders:
+            print(i)
+
+
+c1 = Customer("Jan", "Zdzich", "Gdansk", 23, "jankooo")
+c1.add_order("glosnik", 456.99)
+c1.add_order("sluchawki", 876.50)
+
+print(c1.total_order_cost)
+print(c1.show_orders())
+
 
 
 
