@@ -1,13 +1,13 @@
 def ending_dec(func):
     def wrapper():
         func()
-        print(f"---KONIEC---")
+        print("---KONIEC---")
     return wrapper
 
 
 @ending_dec
 def ala():
-    print (f"Ala ma kota")
+    print ("Ala ma kota")
 
 
 @ending_dec
@@ -16,5 +16,5 @@ def dodawanie(a,b):
 
 
 ala()
-dodawanie(4,6)
+
 
