@@ -3,20 +3,26 @@
 # a następnie wykona sumowanie/odejmowanie/mnożenie wszystkich argumentów
 # podanych po pierwszym. Ilość argumentów do obliczeń może być dowolna
 
-def my_func(operation:str, *args):
-    result = 0
-    if operation == "suma":
-        for i in range(1, len(my_func())):
-            result += my_func(i)
-            print(result)
-    elif operation == "roznica":
-        for i in range(1, len(my_func())):
-            result -= my_func(i)
-            print(result)
-    elif operation == "iloczyn":
-        for i in range(1, len(my_func())):
-            result *= my_func(i)
-            print(result)
+def calculation(option: str, *args) -> float:
+    if len(args) >= 2:
+        result = args[0]
+
+        if option == "suma":
+            for i in range(1, len(args)):
+                result += args[i]
+        elif option == "różnica":
+            for i in range(1, len(args)):
+                result -= args[i]
+        elif option == "iloczyn":
+            for i in range(1, len(args)):
+                result *= args[i]
+
+        return result
     else:
-        return None
-my_func("suma", 23, 11, 15, 11)
+        return args[0]
+
+
+print(calculation("suma", 1, 2, 3))
+print(calculation("różnica", 10, 2, 5))
+print(calculation("iloczyn", 2, 2, 2))
+print(calculation("różnica", -2))
