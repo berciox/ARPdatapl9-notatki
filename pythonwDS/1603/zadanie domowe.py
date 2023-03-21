@@ -45,17 +45,25 @@
 
 # Zadanie 04
 # Napisać program, gdzie użytkownik podaje liczby całkowite i je sumuje. Program działa dopóki użytkownik nie poda liczby ujemnej. Po podaniu liczby ujemnej program wyświetla sumę podanych poprzednich liczb.
-#
+# Do zadania nr 4 z pracy domowej dopisz zabezpeczenie, jeżeli użytkownik poda
+# informację, której nie można konwertować na int
 
-# suma = 0
-#
-# while True:
-#     liczba = int(input("Podaj liczbę całkowitą: "))
-#     if liczba < 0:
-#         break
-#     suma += liczba
-#
-# print("Suma podanych liczb to:", suma)
+# Rozwiń funkcjonalność zadania z (opcja, *args) o nową opcję "iloraz".
+# Zabezpiecz program, że w przypadku dzielenia przez zero kontynuuj działanie
+# iloraz (dzielenia kolejnych wartości), pomijając błędny (umieść continue w except)
+
+
+try:
+    suma = 0
+    while True:
+        liczba = int(input("Podaj liczbę całkowitą: "))
+        if liczba < 0:
+            break
+        suma += liczba
+
+except ValueError:
+    print("Zły typ danych, podaj liczbę całkowitą")
+print("Suma podanych liczb to:", suma)
 
 
 
@@ -127,11 +135,11 @@
 #
 # Przykładowo: użytkownik podał n = 3. Następnie podał trzy łańcuchy znakowe: Kot, Pies, Kot. Program zwróci informacje, że ilość UNIKATOWYCH łańuchów znakowych to: 2.
 
-n = int(input("Ile danych chcesz podać?: "))
-my_collection = set()
-
-for i in range(n):
-    txt = input(f"Podaj txt {i+1}: ")
-    my_collection.add(txt)
-
-print(f"Ilość unikatowych wartości: {len(my_collection)}")
+# n = int(input("Ile danych chcesz podać?: "))
+# my_collection = set()
+#
+# for i in range(n):
+#     txt = input(f"Podaj txt {i+1}: ")
+#     my_collection.add(txt)
+#
+# print(f"Ilość unikatowych wartości: {len(my_collection)}")
