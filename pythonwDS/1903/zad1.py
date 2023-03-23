@@ -3,17 +3,27 @@
 #
 # Dodatkowo zabezpiecz program, przed błednymi danymi (np. tekst)
 
-
+# def find_max(numbers: list) -> float:
+#     try:
+#         current_max = float(numbers[0])
+#     except ValueError:
+#         print("Błedne dane!")
+#         exit(-999)
+#     if len(numbers) == 1:
+#         return current_max
+#     else:
+#         for i in range(1, len(numbers)):
+#             try:
+#                 if current_max < numbers[i]:
+#                     current_max = float(numbers[i])
+#             except TypeError:
+#                 continue
+#         return current_max
 #
-# def max_value(*args):
-#     najwieksza = 0
-#     for i in *args:
-#         if i == najwieksza or i > najwieksza:
-#             najwieksza = i
-#         return najwieksza
 #
 #
-# max_value([5,3,2,5,2,1])
+# n = [1,4,1,5,6]
+# print(find_max(n))
 
 
 
@@ -38,12 +48,6 @@
 # N element ciągu harmonicznego (prośba o weryfikacje czym jest ciag z netem)
 
 
-class Calculations:
-    def square_func(self, *args):
-        return
-
-
-
 
 
 
@@ -62,21 +66,39 @@ class Calculations:
 # ***
 # Dodaj dekorator, który dodatkowo dopisze "-----------" na dole trójkąta oraz policzy liczbę *
 
-def line_decorator(func):
-    def wrapper(*args, **kwargs):
-
-        return func(*args,**kwargs)
-        print("-----------")
-        for i in range(n):
-            print(sum(n))
-
+# def line_decorator(func):
+#     def wrapper(*args, **kwargs):
+#
+#         return func(*args,**kwargs)
+#         print("-----------")
+#         for i in range(n):
+#             print(sum(n))
+#
+#     return wrapper
+#
+#
+# @line_decorator
+# def draw_tree(n):
+#     for i in range(n):
+#         print((i+1) * "*")
+#
+#
+# draw_tree(5)
+def trigger_base(func):
+    def wrapper (*args, **kwargs):
+        func(*args, **kwargs)
+        print("--------------------")
+        count_of_star = 0
+        for i in range(1, args[0]+1):
+            count_of_star += i
+        print(f"Suma fwiazdek: {count_of_star}")
     return wrapper
 
+@trigger_base
+def print_asterix(n:int):
+    for i in range(1, n+1):
+        for j in range(i):
+            print("*", end = "")
+        print()
 
-@line_decorator
-def draw_tree(n):
-    for i in range(n):
-        print((i+1) * "*")
-
-
-draw_tree(5)
+print_asterix(7)

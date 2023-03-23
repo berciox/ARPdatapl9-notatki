@@ -25,12 +25,29 @@
 #
 # print(words)
 
+
+
+# Moje chujowe
+# from random import randint
+# with open("lotto.txt", "a+", encoding="utf-8") as file:
+#     values_list =[]
+#     n = int(input("Podaj liczbę losowań:"))
+#     while n != 0:
+#         for i in range(6):
+#             values_list.append(randint(1,49))
+#         file.writelines(str(values_list)+"\n")
+#         n = n-1
+
 from random import randint
-with open("lotto.txt", "a+", encoding="utf-8") as file:
-    values_list =[]
-    n = int(input("Podaj liczbę losowań:"))
-    while n != 0:
-        for i in range(6):
-            values_list.append(str(randint(1,49) + "\n"))
-        file.writelines(str(values_list))
-        n = n-1
+print(randint(1, 49))
+
+n = int(input("Podaj ilość losowań: "))
+
+for l in range(n):
+    numbers = set()
+    while len(numbers) < 6:
+        numbers.add(f"{randint(1, 49)} ")
+
+    with open("lotto.txt", "a+", encoding="utf-8") as file:
+        file.writelines(numbers)
+        file.write("\n")
